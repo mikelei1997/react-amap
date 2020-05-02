@@ -27,7 +27,7 @@ function withPropsReactive(MapComponent) {
       const { instance } = this.myMapComponent
       const evs = Object.keys(props.events || {})
       evs.length && evs.forEach(ev => {
-        if (self.registeredEvents.indexOf(ev) === -1) {
+        if (self.registeredEvents.indexOf(ev) === -1 && instance) {
           self.registeredEvents.push(ev)
           instance.on(ev, (function(ev) {
             return function(...args) {
