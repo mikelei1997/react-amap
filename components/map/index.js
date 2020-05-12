@@ -121,7 +121,7 @@ class BaseMap extends Component<MapProps, {mapLoaded: boolean}> {
     this.converterMap = {
       center: toLnglat,
       mapStyle: styleStr => {
-        if (styleStr.indexOf('amap://styles') === 0) {
+        if (styleStr?.indexOf('amap://styles') === 0) {
           return styleStr
         }
         return `amap://styles/${styleStr}`

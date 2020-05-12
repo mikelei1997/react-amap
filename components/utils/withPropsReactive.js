@@ -45,7 +45,7 @@ function withPropsReactive(MapComponent) {
     }
 
     reactivePropChange(nextProps, shouldDetectChange = true) {
-      if (!this.instanceCreated) {
+      if (!this.instanceCreated || !this.myMapComponent) {
         return false
       }
       const { setterMap = {}, converterMap = {}, instance = {} } = this.myMapComponent
